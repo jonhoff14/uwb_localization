@@ -1,0 +1,22 @@
+<launch>
+  <rosparam command="load" file="$(find robot_localization)/params/ekf_uwb.yaml" />
+
+
+  <node pkg="robot_localization" type="ekf_localization_node" name="ekf_node" clear_params="true" output="screen">
+    <remap from="odometry/filtered" to="/robot_localization/odometry/filtered"/>
+    <remap from="odometry/gps" to="/robot_localization/odometry/gps"/>
+    <remap from="gps/filtered" to="/robot_localization/gps/filtered"/>
+    <remap from="diagnostics" to="/robot_localization/diagnostics"/>
+    <remap from="set_pose" to="/robot_localization/set_pose"/>
+  </node>
+
+  <node pkg="robot_localization" type="navsat_transform_node" name="navsat_transform_node" clear_params="true" output="screen">
+    <remap from="odometry/filtered" to="/robot_localization/odometry/filtered"/>
+    <remap from="odometry/gps" to="/robot_localization/odometry/gps"/>
+    <remap from="gps/filtered" to="/robot_localization/gps/filtered"/>
+
+    <remap from="gps/fix" to="/apollo/sensor/uwb/gnss_navsatfix"/>
+    <remap from="imu/data" to="/apollo/sensor/uwb/gnss_imu"/>    
+  </node>
+
+</launch>
