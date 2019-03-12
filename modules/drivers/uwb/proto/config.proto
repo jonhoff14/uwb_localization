@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+package apollo.drivers.uwb.config;
+
+message Config {
+  optional bytes serialdevice = 1; // serial port device name
+  optional int32 baudrate = 2;
+  optional double gnss_stddev_threshold = 3; //  standard deviation threshold of GNSS to ignore readings
+  optional double uwb_stddev = 4; // estimated standard deviation of UWB measurements (in meters)
+  optional double a0_x = 5; // anchor0 x-coordinate in UTM
+  optional double a0_y = 6; // anchor0 y-coordinate in UTM
+  optional double a0_z = 7; // anchor0 z-coordinate in UTM
+  optional double a1_x = 8; // anchor1 x-coordinate in UTM
+  optional double a1_y = 9; // anchor1 y-coordinate in UTM
+  optional double a1_z = 10; // anchor1 z-coordinate in UTM
+  optional int32 uwb_experiment_date = 11; // date of UWB experiment (20180716 is 2018-07-16)
+}

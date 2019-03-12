@@ -1,0 +1,9 @@
+<launch>
+    <group ns="uwb">
+        <node pkg="tf2_ros" type="static_transform_publisher"
+            name="base_link_indotraq" args="-0.1016 0.81915 0.5588 0 0 0 1 /base_link /indotraq"/>
+        <param name="uwb_conf" value="/apollo/modules/drivers/uwb/conf/uwb_conf.txt" />
+        <node pkg="uwb_driver" name="uwb_driver" type="uwb_driver" output="screen"/>
+        <node pkg="uwb_driver" name="uwb_gnss_fusion" type="uwb_gnss_fusion" output="screen"/>
+    </group>
+</launch>

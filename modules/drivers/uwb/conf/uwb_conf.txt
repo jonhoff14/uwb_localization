@@ -1,0 +1,11 @@
+serialdevice: "/dev/ttyACM0"
+baudrate: 9600
+gnss_stddev_threshold: 1.2
+uwb_stddev: 0.5
+a0_x: 300797.019181
+a0_y: 4705712.01248
+a0_z: 235.56
+a1_x: 300811.268581
+a1_y: 4705712.01248
+a1_z: 235.56
+uwb_experiment_date: 20180718

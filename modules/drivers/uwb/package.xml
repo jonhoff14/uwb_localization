@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package>
+  <name>uwb_driver</name>
+  <version>1.0.0</version>
+  <description>The UWB driver package</description>
+
+  <maintainer email="jon.hoff@havalus.com">Jonathan Hoff</maintainer>
+
+  <license>Licensed under the Apache License, Version 2.0 </license>
+
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>nodelet</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>tf2_ros</build_depend>
+
+  <run_depend>nodelet</run_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>tf2_ros</run_depend>
+  
+</package>
